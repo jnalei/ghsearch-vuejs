@@ -139,7 +139,7 @@ export default {
 }
 
 .active {
-  background-color: lightcoral;
+  background-color: #64c5d4;
   color: #ffffff;
 }
 </style>

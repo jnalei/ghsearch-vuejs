@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <h2 class="searchHeader">Search GitHub Users:</h2>
     <input
       type="text"
       name="gh-username"
@@ -12,18 +13,23 @@
     <span class="loading" v-if="loading"
       >Searching GitHub for "{{ userInput }}"...</span
     >
-
+    Total Results: {{ allItems }}
     <div class="box" v-if="(results && !loading) || (error && !loading)">
       <div v-if="results">
-        <div v-for="result in results" :key="result" :result="result">
+        <div
+          class="resultsBox"
+          v-for="result in results"
+          :key="result"
+          :result="result"
+        >
           <a v-bind:href="`${result.html_url}`" target="_blank">
-            {{ result.html_url }}
             <img
               v-if="result.avatar_url"
               :src="result.avatar_url"
               class="userImg"
               :alt="'GitHub Avatar for ' + userInput"
             />
+            {{ result.html_url }}
             <h4 v-if="result.login">{{ result.login }}</h4>
           </a>
         </div>
@@ -38,8 +44,6 @@
           :currentPage="currentPage"
           @pagechanged="onPageChange"
         />
-
-        Total Results: {{ allItems }}
       </div>
     </div>
   </div>
@@ -146,41 +150,53 @@ div {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.4;
-  display: inline;
 }
 input {
   display: block;
   width: 350px;
   max-width: 74%;
   padding: 15px 25px;
-  margin: 45px auto;
+  margin: 25px auto;
+  opacity: 0.8;
+  background: #e7e2d3;
+  border-radius: 6px;
+  outline: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #625d8e;
+}
+a :hover {
+  text-decoration: underline;
 }
 .userImg {
-  opacity: 0.8;
   border-radius: 50%;
 }
-.userImg :hover {
-  opacity: 1;
-}
+
 .has-error {
   border: 1px solid #96281b;
   outline: none;
 }
+.resultsBox {
+  opacity: 0.8;
+}
+
 .box {
-  display: block;
-  width: 650px;
-  max-width: 74%;
-  padding: 25px;
+  background: #f1ede2;
+  width: 1000px;
+  padding: 45px 0px 45px 0px;
   margin: 15px auto;
-  background: #eeeeee;
-  border: 1px solid #d2d7d3;
-  text-align: center;
 }
 .box img {
-  display: block;
+  display: flex;
   width: 100px;
   height: auto;
   margin: 0 auto 15px;
+  opacity: 0.7;
+}
+.box img:hover {
+  opacity: 1;
 }
 .loading {
   display: block;
