@@ -1,17 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <SearchMany />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SearchMany from "./components/SearchMany.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    SearchMany,
+  },
+};
 </script>
 
 <style>
