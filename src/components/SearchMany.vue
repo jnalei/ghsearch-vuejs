@@ -4,7 +4,7 @@
     <input
       type="text"
       name="gh-username"
-      placeholder="Search - User Input"
+      placeholder="Search..."
       v-model="userInput"
       @keydown.enter="search"
       :class="{ 'has-error': error }"
