@@ -1,24 +1,4 @@
-# ghsearch-vuejs
+# GitHub Search - VueJS
+Welcome to my project! For this application, I'm implementing GitHub's API and VueJS framework to create a search feature to find GitHub users. You will be able to navigate between the pages of the search results and clicking on a single result will lead you to their GitHub repo page.
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
